@@ -9,10 +9,19 @@
 </head>
 <body>
     <div class="container">
-        <form action="#" id="form_storage">
-            <input type="text" id="txt_bar">
-            <input type="submit" value="enviar">
-        </form>
+        <div class="comand">
+            <form action="#" id="form_storage">
+                <input type="text" id="txt_bar">
+                <select id="priority">
+                    <option value="high">Alta</option>
+                    <option value="mid">Media</option>
+                    <option value="low">Baixa</option>
+                </select>
+                <label for="remain_time">Data limite</label>
+                <input type="date" id="remain_time">
+                <input type="submit" value="Salvar">
+            </form>
+        </div>
     </div>
 </body>
 </html>
