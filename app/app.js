@@ -18,7 +18,34 @@ form.addEventListener('submit', function(event){
 })
 
 // priority.addEventListener('change', function(event){
-//     console.log(priority.value)
+    //     console.log(priority.value)
 // })
 
 // funcoes
+const data_pool= localStorage.getItem("task");
+
+// async function getResponse(){
+
+//     data_pool.map((post)=> {
+//         const divCard= document.createElement('div');
+//         divCard.classList.add("card");
+//         const task_name=document.createElement('h1');
+//         task_name.innerText=post.title
+//         const remain_time=document.createElement('p');
+//         remain_time.innerText=post.body
+//         const concluido=document.createElement('a');
+//         concluido.innerText="ler mais..."
+//         link.setAttribute("href", `https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
+//         link.setAttribute("id", post.id )
+    
+//         divCard.appendChild(title);
+//         divCard.appendChild(body);
+//         divCard.appendChild(link);
+//         container.appendChild(divCard);
+        
+//         console.log(post)
+// } )
+//  }
+
+
+//  getResponse();
