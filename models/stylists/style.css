@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.container {
+#container {
     display: grid;
     height: 100vh;
     width: 100vw;
@@ -15,12 +15,21 @@
     align-items: center;
 }
 
-.container .comand {
+#container #comand {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: blanchedalmond;
     height: 60%;
+    width: 80%;
+}
+#container #tsk_lst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blanchedalmond;
+    height: 80%;
     width: 80%;
 }
