@@ -15,7 +15,7 @@ form.addEventListener('submit', function(event) {
     const priority = select.value;
     const rmt = date_time.value;
 
-    let task = [{ task_name: task_name, priority: priority, rmt: rmt }];
+    let task = { task_name: task_name, priority: priority, rmt: rmt };
     let tasks = JSON.parse(localStorage.getItem("task"));
 
     if (!Array.isArray(tasks)) {
