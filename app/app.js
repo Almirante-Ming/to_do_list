@@ -37,14 +37,9 @@ function criar_lista() {
     const data_sto = localStorage.getItem("task");
     let data_pool = JSON.parse(data_sto);
     
-    // if (!Array.isArray(data_pool)) {
-    //     console.error('data_pool não é um array:', data_pool);
-    //     return;
-    // }
-    
     tsk_lst.innerHTML = '';
-
-    data_pool.map((post) => {
+    
+    data_pool.reverse().map((post) => {
         const divCard = document.createElement('div');
         divCard.classList.add('task');
         
@@ -58,12 +53,24 @@ function criar_lista() {
         date_limit.classList.add('rmt');
         date_limit.value = post.rmt;
         
+        const edit = document.createElement('input');
+        edit.setAttribute('type','submit');
+        edit.value = 'concluir';
+        
         divCard.appendChild(task_name);
         divCard.appendChild(level);
         divCard.appendChild(date_limit);
+        divCard.appendChild(edit);
         tsk_lst.appendChild(divCard);
         
         // console.log(post);
     });
 }
+
+// function deletar_task(){
+//     const data_sto = localStorage.getItem("task");
+//     let data_pool = JSON.parse(data_sto);
+//     data_pool.find
+    
+// }
 criar_lista();
