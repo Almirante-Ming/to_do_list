@@ -16,30 +16,28 @@ form.addEventListener('submit', function(event) {
     const rmt = date_time.value;
 
     let task = { task_name: task_name, priority: priority, rmt: rmt };
-    let tasks = JSON.parse(localStorage.getItem("task"));
-
-    if (!Array.isArray(tasks)) {
-        tasks = [];
-    }
+    let tasks = JSON.parse(localStorage.getItem("task")) || [];
 
     tasks.push(task);
     localStorage.setItem("task", JSON.stringify(tasks));
-    criar_lista();
+    active_task();
 });
 
-// priority.addEventListener('change', function(event){
-//     console.log(priority.value);
-// });
+tsk_lst.addEventListener('click', function(event) {
+    if (event.target && event.target.classList.contains('finish-btn')) {
+        const taskIndex = event.target.dataset.index;
+        finish_task(taskIndex);
+    }
+});
 
-
-// Funções
-function criar_lista() {
+// Funcoes
+function active_task() {
     const data_sto = localStorage.getItem("task");
-    let data_pool = JSON.parse(data_sto);
+    let data_pool = JSON.parse(data_sto) || [];
     
     tsk_lst.innerHTML = '';
     
-    data_pool.reverse().map((post) => {
+    data_pool.reverse().forEach((post, index) => {
         const divCard = document.createElement('div');
         divCard.classList.add('task');
         
@@ -53,24 +51,31 @@ function criar_lista() {
         date_limit.classList.add('rmt');
         date_limit.value = post.rmt;
         
-        const edit = document.createElement('input');
-        edit.setAttribute('type','submit');
-        edit.value = 'concluir';
-        
+        const finish = document.createElement('input');
+        finish.setAttribute('type', 'button');
+        finish.value = 'concluir';
+        finish.classList.add('finish-btn');
+        finish.setAttribute('data-index', index);
+
         divCard.appendChild(task_name);
         divCard.appendChild(level);
         divCard.appendChild(date_limit);
-        divCard.appendChild(edit);
+        divCard.appendChild(finish);
         tsk_lst.appendChild(divCard);
-        
-        // console.log(post);
     });
 }
 
-// function deletar_task(){
-//     const data_sto = localStorage.getItem("task");
-//     let data_pool = JSON.parse(data_sto);
-//     data_pool.find
-    
-// }
-criar_lista();
+function finish_task(index) {
+    let tasks = JSON.parse(localStorage.getItem("task")) || [];
+    let finishedTasks = JSON.parse(localStorage.getItem("finish_tasks")) || [];
+
+    const [completedTask] = tasks.splice(index, 1);
+    finishedTasks.push(completedTask);
+
+    localStorage.setItem("task", JSON.stringify(tasks));
+    localStorage.setItem("finish_tasks", JSON.stringify(finishedTasks));
+
+    active_task();
+}
+
+active_task();
