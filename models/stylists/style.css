@@ -1,0 +1,127 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    min-height: 100vh;        
+    position: relative;       
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/models/stylists/gif.gif') no-repeat center center/cover;
+    filter: blur(5px); 
+    z-index: -1;               
+}
+
+#container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* #comand {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 20px; 
+} */
+
+#comand input[type="text"],
+#comand input[type="date"],
+#comand select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+#comand input[type="submit"] {
+    background-color: #6200ff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#comand input[type="submit"]:hover {
+    background-color: #350188;
+}
+
+#tsk_lst .task {
+    margin-top: 10px;
+    background-color: #e9ecef;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+#tsk_lst .task h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #495057;
+}
+
+#tsk_lst .task p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #495057;
+}
+
+#tsk_lst .task input[type="button"] {
+    margin-top: 10px;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.finish-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.finish-btn:hover {
+    background-color: #218838;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
