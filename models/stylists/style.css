@@ -1,35 +1,149 @@
-* {
-    padding: 0;
+body {
+    font-family: "Poppins", sans-serif;
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
+    display: grid;
+    justify-content: center;  
+    align-items: center;      
+    min-height: 100vh;        
+    position: relative;       
+}
+
+body::before {
+    content: "";
+    background: url('/models/assets/background_2.jpeg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px); 
+    z-index: -1;               
 }
 
 #container {
-    display: grid;
-    height: 100vh;
-    width: 100vw;
-    /* grid-template-columns: auto-fit, minmax(30rem, 1fr);
-    grid-template-rows: auto-fit, minmax(30rem, 1fr);
-    background-color: rgb(172, 91, 172); */
-    justify-content: center;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #0a2a41;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#comand h2 {
+    text-align: center;
+    color: rgba(244, 232, 232);
+    margin-bottom: 20px;
+    /* font-style: bold #ffffff; */
+}
+
+/* #comand {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 20px; 
+} */
+
+#comand input[type="text"],
+#comand input[type="date"],
+#comand select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+#comand input[type="submit"] {
+    background-color: #6200ff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#comand input[type="submit"]:hover {
+    background-color: #350188;
+}
+
+#tsk_lst .task {
+    margin-top: 10px;
+    background-color: #25a7c1;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#tsk_lst .task h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #000000;
     align-items: center;
 }
 
-#container #comand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: blanchedalmond;
-    height: 60%;
-    width: 80%;
+#tsk_lst .task h4 {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #000000;
+
 }
-#container #tsk_lst {
+
+#tsk_lst .task input[type="button"] {
+    margin-top: 10px;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: blanchedalmond;
-    height: 80%;
-    width: 80%;
+}
+
+#tsk_lst .task input[type="input"] {
+    color: #1d7b95;
+    border-radius: 20px;
+}
+
+#tsk_lst #alta {
+    background: #ff0000;
+}
+#tsk_lst #media {
+    background: #cec523;
+}
+#tsk_lst #baixa {
+    background: #1d683f;
+}
+
+
+
+.finish-btn {
+    background-color: rgb(68, 102, 63);
+    color: #fff;
+}
+
+.edit-btn {
+    background-color: #ce5d37;
+    color: #fff;
+}
+
+.delete-btn {
+    background-color: #a3405f;
+    color: #fff;
+}
+
+.finish-btn:hover {
+    background-color: #218838;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
 }
