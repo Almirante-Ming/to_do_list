@@ -30,35 +30,41 @@ function active_task() {
     
     tsk_lst.innerHTML = '';
     
-    data_pool.reverse().forEach((post, index) => {
+    data_pool.forEach((post, index) => {
 
         const divCard = document.createElement('div');
         divCard.classList.add('task');
+
         const task_name = document.createElement('h2');
         task_name.innerText = post.task_name;
-        const level = document.createElement('p');
+
+        const level = document.createElement('h4');
         level.innerText = post.priority;
+        
         const date_limit = document.createElement('input');
         date_limit.classList.add('rmt');
         date_limit.value = post.rmt;
         
         const finish = document.createElement('input');
         finish.setAttribute('type', 'button');
-        finish.value = 'concluir';
-        finish.classList.add('finish-btn');
+        finish.setAttribute('id', 'tsk_opt');
         finish.setAttribute('data-index', index);
+        finish.classList.add('finish-btn');
+        finish.value = 'concluir';
         
         const edit = document.createElement('input');
         edit.setAttribute('type', 'button');
-        edit.value = 'editar';
-        edit.classList.add('edit-btn');
+        edit.setAttribute('id', 'tsk_opt');
         edit.setAttribute('data-index', index);
+        edit.classList.add('edit-btn');
+        edit.value = 'editar';
 
         const del = document.createElement('input');
         del.setAttribute('type', 'button');
-        del.value = 'excluir';
-        del.classList.add('delete-btn');
+        del.setAttribute('id', 'tsk_opt');
         del.setAttribute('data-index', index);
+        del.classList.add('delete-btn');
+        del.value = 'excluir';
         
         divCard.appendChild(task_name);
         divCard.appendChild(level);
