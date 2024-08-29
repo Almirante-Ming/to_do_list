@@ -11,7 +11,7 @@ body {
 
 body::before {
     content: "";
-    background: url('/models/assets/gif.gif') no-repeat center center/cover;
+    background: url('/models/assets/background_2.jpeg') no-repeat center center/cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -25,15 +25,16 @@ body::before {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    /* background-color: rgba(255, 255, 255, 0.8); */
+    background-color: #0a2a41;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
-h2 {
+#comand h2 {
     text-align: center;
-    color: #ffffff;
+    color: rgba(244, 232, 232);
     margin-bottom: 20px;
+    /* font-style: bold #ffffff; */
 }
 
 /* #comand {
@@ -70,7 +71,7 @@ h2 {
 
 #tsk_lst .task {
     margin-top: 10px;
-    background-color: #e9ecef;
+    background-color: #25a7c1;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 6px;
@@ -82,13 +83,15 @@ h2 {
 #tsk_lst .task h2 {
     margin: 0;
     font-size: 18px;
-    color: #495057;
+    color: #000000;
+    align-items: center;
 }
 
-#tsk_lst .task p {
+#tsk_lst .task h4 {
     margin: 5px 0;
-    font-size: 14px;
-    color: #495057;
+    font-size: 16px;
+    color: #000000;
+
 }
 
 #tsk_lst .task input[type="button"] {
@@ -98,20 +101,42 @@ h2 {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;
 }
 
+#tsk_lst .task input[type="input"] {
+    color: #1d7b95;
+    border-radius: 20px;
+}
+
+#tsk_lst .task .alta {
+    color: #ff0000;
+    border-radius: 20px;
+}
+#tsk_lst .task .media {
+    color: #cec523;
+    border-radius: 20px;
+}
+#tsk_lst .task .baixa {
+    background: #1d683f;
+    size: 10px;
+    /* border-radius: 20px; */
+}
+
+
+
 .finish-btn {
-    background-color: #28a745;
+    background-color: rgb(68, 102, 63);
     color: #fff;
 }
 
 .edit-btn {
-    background-color: #ffc107;
+    background-color: #ce5d37;
     color: #fff;
 }
 
 .delete-btn {
-    background-color: #dc3545;
+    background-color: #a3405f;
     color: #fff;
 }
 
