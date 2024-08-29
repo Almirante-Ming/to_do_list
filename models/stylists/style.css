@@ -28,45 +28,74 @@ body::before {
     gap: 20px;
 }
 
+#comand {
+    margin-bottom: 90px;
+    width: 35%; 
+    padding: 20px;
+    background-color: #0a2a41;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
 #comand h2 {
     text-align: center;
     color: #ffffff;
     margin-bottom: 20px;
 }
 
-#comand {
-    margin-bottom: 90px;
-    width: 30%;
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #0a2a41;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
+#comand label {
+    color: #ffffff;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: bold;
 }
 
 #comand input[type="text"],
 #comand input[type="date"],
 #comand select {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #ced4da;
+    border-radius: 6px;
+    background-color: #f7f9fc; 
+    color: #495057;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
-#comand input[type="submit"] {
-    background-color: #6200ff;
+#comand input[type="text"]:focus,
+#comand input[type="date"]:focus,
+#comand select:focus {
+    border-color: #007bff; 
+    outline: none;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center; 
+    margin-top: 12px;
+}
+
+.buttons input[type="submit"] {
+    background-color: #007bff; 
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#comand input[type="submit"]:hover {
-    background-color: #350188;
+.buttons input[type="submit"]:hover {
+    background-color: #0056b3; 
+    transform: translateY(-3px); 
+}
+
+.buttons input[type="submit"]:active {
+    transform: translateY(1px); 
 }
 
 #tsk_lst {
@@ -95,31 +124,37 @@ body::before {
 }
 
 #tsk_lst .task {
-    background-color: #2d5a86;
-    padding: 15px;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #1f3b57; 
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: row;
+    justify-content: space-between; 
+    height: 100%; 
+}
+
+#tsk_lst .task:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
 }
 
 #tsk_lst .task h2 {
-    margin: 0;
-    font-size: 18px;
+    font-size: 20px;
     color: #ffffff;
+    margin-bottom: 10px;
 }
 
 #tsk_lst .task p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #ffffff;
+    font-size: 16px;
+    color: #c2c2c2;
 }
 
 #tsk_lst .task .date {
-    font-size: 12px;
-    color: #adb5bd; 
-    margin-top: 10px;
-    text-align: right; 
+    font-size: 14px;
+    color: #8fb7e9; 
+    margin-top: 15px;
 }
 
 .task-actions {
@@ -131,21 +166,28 @@ body::before {
 .task-actions i {
     cursor: pointer;
     font-size: 18px;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-actions i:hover {
+    transform: translateY(-3px); 
 }
 
 .finish-btn {
-    color: #28a745;
+    background-color: #28a745; 
+    color: #ffffff;
 }
 
 .edit-btn {
-    color: #ffc107;
+    background-color: #ffc107; 
+    color: #ffffff;
 }
 
 .delete-btn {
-    color: #dc3545;
+    background-color: #dc3545; 
+    color: #ffffff;
 }
 
 .finish-btn:hover {

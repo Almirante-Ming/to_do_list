@@ -13,26 +13,24 @@
     <div id="comand">
         <h2>To Do List</h2>
         <form action="#" id="form_storage">
-            <input type="text" id="txt_bar">
+            <input type="text" id="txt_bar" placeholder="Digite uma tarefa">
             <select id="priority">
                 <option value="alta">Alta</option>
-                <option value="media">Media</option>
+                <option value="media">Média</option>
                 <option value="baixa">Baixa</option>
             </select>
           
             <label for="remain_time">Data limite</label>
             <input type="date" id="remain_time">
-            <input type="submit" value="Salvar">
+            
+            <div class="buttons">
+                <input type="submit" value="Salvar">
+            </div>
         </form>
     </div>
     <div id="container">
-
-        <div id="tsk_lst">
-            
-        </div>
-        <div class="fns_tsk">
-
-        </div>
+        <div id="tsk_lst"></div>
+        <div class="fns_tsk"></div>
     </div>
 </body>
 </html>
