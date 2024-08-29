@@ -34,13 +34,14 @@ function active_task() {
 
         const divCard = document.createElement('div');
         divCard.classList.add('task');
+        divCard.setAttribute('id', post.priority);
 
         const task_name = document.createElement('h2');
         task_name.innerText = post.task_name;
 
         const level = document.createElement('h4');
         level.innerText = post.priority;
-        
+
         const date_limit = document.createElement('input');
         date_limit.classList.add('rmt');
         date_limit.value = post.rmt;

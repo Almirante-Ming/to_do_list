@@ -39,9 +39,9 @@ body::before {
     width: 30%;
     padding: 10px;
     margin: 5px 0;
-    background-color: #0a2a41;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
+    background-color: #28899c;
+    border: 1px solid #000000;
+    border-radius: 6px;
 }
 
 #comand input[type="text"],
@@ -53,9 +53,12 @@ body::before {
     border: 1px solid #ced4da;
     border-radius: 4px;
 }
+#comand input[type="text"]::placeholder {
+    color: #000000;
+}
 
 #comand input[type="submit"] {
-    background-color: #6200ff;
+    background-color: #005eff;
     color: #ffffff;
     padding: 10px 20px;
     border: none;
@@ -67,6 +70,10 @@ body::before {
 
 #comand input[type="submit"]:hover {
     background-color: #350188;
+}
+
+#comand label{
+    color: #ffffff;
 }
 
 #tsk_lst {
@@ -95,7 +102,7 @@ body::before {
 }
 
 #tsk_lst .task {
-    background-color: #2d5a86;
+    background-color: #25a7c1;
     padding: 15px;
     border-radius: 6px;
     display: flex;
@@ -109,17 +116,25 @@ body::before {
     color: #ffffff;
 }
 
-#tsk_lst .task p {
+#tsk_lst .task h4 {
     margin: 5px 0;
     font-size: 14px;
     color: #ffffff;
 }
 
-#tsk_lst .task .date {
+#tsk_lst .task .rmt {
     font-size: 12px;
-    color: #adb5bd; 
+    border: none;
+    background-color: transparent;
+    color: #ffffff; 
     margin-top: 10px;
-    text-align: right; 
+    margin-bottom: 10px;
+    text-align: center; 
+}
+
+#tsk_lst .task #tsk_opt {
+    border-radius: 6px;
+    padding: auto;
 }
 
 .task-actions {
@@ -136,29 +151,40 @@ body::before {
     transition: background-color 0.3s ease;
 }
 
+#tsk_lst #alta {
+    background: #ff0000;
+}
+#tsk_lst #media {
+    background: #b4ad21;
+}
+#tsk_lst #baixa {
+    background: #1d683f;
+}
+
+
 .finish-btn {
-    color: #28a745;
+    background-color: rgb(68, 102, 63);
+    color: #fff;
 }
 
 .edit-btn {
-    color: #ffc107;
+    background-color: #ce5d37;
+    color: #fff;
 }
 
 .delete-btn {
-    color: #dc3545;
+    background-color: #a3405f;
+    color: #fff;
 }
 
 .finish-btn:hover {
     background-color: #218838;
-    color: #fff;
 }
 
 .edit-btn:hover {
     background-color: #e0a800;
-    color: #fff;
 }
 
 .delete-btn:hover {
     background-color: #c82333;
-    color: #fff;
 }
