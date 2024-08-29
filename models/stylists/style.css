@@ -36,13 +36,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* #comand {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    margin-bottom: 20px; 
-} */
-
 #comand input[type="text"],
 #comand input[type="date"],
 #comand select {
@@ -67,6 +60,27 @@ h2 {
 #comand input[type="submit"]:hover {
     background-color: #350188;
 }
+
+#tsk_lst {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px; 
+    overflow-x: auto; 
+    padding: 10px; 
+}
+
+.task {
+    flex: 0 0 auto; 
+    width: 200px; 
+    background-color: #e9ecef;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 #tsk_lst .task {
     margin-top: 10px;
