@@ -1,0 +1,59 @@
+<!--
+
+Sobre o template, com a implementação do bootstrap além dos cards virem prontos,
+
+-> Tambem existe a forma de deixar os mesmo nao visiveis aos olhos do usuario
+(utlizando o comando d-none)
+
+-> Foi criado um template e o mesmo será utilizado na personalização em conjunto com o 
+comando Clone Node sua explicaçao estará no codigo do JS-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <script src="./app/app.js" defer></script>
+    <link rel="stylesheet" href="./models/stylists/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container my-5">
+        <div id="comand" class="mb-4">
+            <h2 class="text-center text-light">Lista de Tarefas</h2>
+            <form action="#" id="form_storage" class="form-group">
+                <input type="text" id="txt_bar" placeholder="Nome da tarefa" class="form-control mb-2">
+                <select id="priority" class="form-control mb-2">
+                    <option value="alta">Alta</option>
+                    <option value="media">Média</option>
+                    <option value="baixa">Baixa</option>
+                </select>
+                <label for="remain_time" class="text-light">Data limite</label>
+                <input type="date" id="remain_time" class="form-control mb-2">
+                <input type="submit" value="Salvar" class="btn btn-primary btn-block">
+            </form>
+        </div>
+
+        <!-- template que será utilizado no JS -->
+         
+        <div class="card d-none" id="task-template" style="width: 100%;">
+            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="btn-group">
+                <button class="btn btn-success finish-btn"><i class="bi bi-check"></i></button>
+                <button class="btn btn-warning edit-btn"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-danger delete-btn"><i class="bi bi-trash"></i></button>
+            </div>
+            </div>
+        </div>
+
+        <div id="tsk_lst" class="task-grid"></div>
+    </div>
+</body>
+</html>
+
+
