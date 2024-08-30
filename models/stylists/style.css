@@ -1,0 +1,64 @@
+
+/* 
+
+Foi removido grande parte da 
+personalização dos elementos devido a utilização do bootstrap
+
+o grid tinha sido retirado, porem teve que ser inserido 
+novamente para uma boa formatação dos cards que serão gerados 
+
+foi criado a area do task-grid na mão porque eu senti mais
+facilidade na utlizaçao e porque quando eu tentei inserir
+pelo bootstrap deu alguns erros
+
+*/
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* 
+::before utilizado para um tratamento/funcionamento melhor na imagem como "papel de parede do programa",
+também para adicionarmos mais detalhes como efeitos e comandos 
+ */
+
+body::before {
+    content: "";
+    background: url('/models/assets/background_2.jpeg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1000px;
+    padding: 20px;
+    background-color: #0a2a41;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+/* grid dos cards que vão ser gerados*/
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+
