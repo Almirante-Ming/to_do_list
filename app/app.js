@@ -8,18 +8,17 @@ const date_time = document.querySelector('#remain_time');
 
 // Eventos
 tsk_lst.addEventListener('click', function(event) {
-    if (event.target && event.target.classList.contains('finish-btn')) {
+    if (event.target && event.target.classList.contains('btn-success')) {
         const taskIndex = event.target.dataset.index;
         finish_task(taskIndex);
-    } else if (event.target && event.target.classList.contains('edit-btn')) {
+    } else if (event.target && event.target.classList.contains('btn-warning')) {
         const taskIndex = event.target.dataset.index;
         edit_task(taskIndex);
-    } else if (event.target && event.target.classList.contains('delete-btn')) {
+    } else if (event.target && event.target.classList.contains('btn-danger')) {
         const taskIndex = event.target.dataset.index;
         delete_task(taskIndex);
     }
 });
-
 
 form.addEventListener('submit', listener);
 
@@ -31,48 +30,55 @@ function active_task() {
     tsk_lst.innerHTML = '';
     
     data_pool.forEach((post, index) => {
-
+        
         const divCard = document.createElement('div');
-        divCard.classList.add('task');
+        divCard.classList.add('card', 'mb-3'); // Bootstrap card
         divCard.setAttribute('id', post.priority);
 
-        const task_name = document.createElement('h2');
+        const divCardBody = document.createElement('div');
+        divCardBody.classList.add('card-body'); // Bootstrap card body
+
+        const task_name = document.createElement('h5');
+        task_name.classList.add('card-title');
         task_name.innerText = post.task_name;
 
-        const level = document.createElement('h4');
-        level.innerText = post.priority;
+        const level = document.createElement('p');
+        level.classList.add('card-text');
+        level.innerText = `prioridade: ${post.priority}`;
 
         const date_limit = document.createElement('input');
-        date_limit.classList.add('rmt');
+        date_limit.classList.add('form-control', 'mb-2'); // Bootstrap input
         date_limit.value = post.rmt;
-        
-        const finish = document.createElement('input');
-        finish.setAttribute('type', 'button');
-        finish.setAttribute('id', 'tsk_opt');
-        finish.setAttribute('data-index', index);
-        finish.classList.add('finish-btn');
-        finish.value = 'concluir';
-        
-        const edit = document.createElement('input');
-        edit.setAttribute('type', 'button');
-        edit.setAttribute('id', 'tsk_opt');
-        edit.setAttribute('data-index', index);
-        edit.classList.add('edit-btn');
-        edit.value = 'editar';
+        date_limit.setAttribute('readonly', true);
 
-        const del = document.createElement('input');
-        del.setAttribute('type', 'button');
-        del.setAttribute('id', 'tsk_opt');
-        del.setAttribute('data-index', index);
-        del.classList.add('delete-btn');
-        del.value = 'excluir';
+        const btnGroup = document.createElement('div');
+        btnGroup.classList.add('btn-group'); // Bootstrap button group
+
+        const finish = document.createElement('button');
+        finish.classList.add('btn', 'btn-success');
+        finish.setAttribute('data-index', index);
+        finish.innerText = 'Concluir';
         
-        divCard.appendChild(task_name);
-        divCard.appendChild(level);
-        divCard.appendChild(date_limit);
-        divCard.appendChild(finish);
-        divCard.appendChild(edit);
-        divCard.appendChild(del);
+        const edit = document.createElement('button');
+        edit.classList.add('btn', 'btn-warning');
+        edit.setAttribute('data-index', index);
+        edit.innerText = 'Editar';
+
+        const del = document.createElement('button');
+        del.classList.add('btn', 'btn-danger');
+        del.setAttribute('data-index', index);
+        del.innerText = 'Excluir';
+        
+        btnGroup.appendChild(finish);
+        btnGroup.appendChild(edit);
+        btnGroup.appendChild(del);
+
+        divCardBody.appendChild(task_name);
+        divCardBody.appendChild(level);
+        divCardBody.appendChild(date_limit);
+        divCardBody.appendChild(btnGroup);
+
+        divCard.appendChild(divCardBody);
         tsk_lst.appendChild(divCard);
     });
 }
@@ -108,7 +114,6 @@ function edit_task(index) {
         select.value = tasks[index].priority;
         date_time.value = tasks[index].rmt;
         
-
         form.removeEventListener('submit', listener);
         
         function saveEdit(event) {
@@ -131,9 +136,8 @@ function edit_task(index) {
         }
 
         form.addEventListener('submit', saveEdit);
-    }
-    else {
-         alert('Tarefa não encontrada para edição.');
+    } else {
+        alert('Tarefa não encontrada para edição.');
     }
 }
 
